@@ -43,6 +43,11 @@ upvoteBtn.addEventListener('click', () => {
 
 reviewForm.addEventListener('submit', event => {
     event.preventDefault();
-    let givingFeedback = feedback.textContent
-    reviewBtn.value = givingFeedback
+    //feedback.textContent = reviewBtn.value
+    let newReview = document.createElement('h3')
+    newReview.textContent = `"${reviewBtn.value}"`
+    document.querySelector('.review-container').appendChild(newReview);
+
+    reviewForm.reset();
+    
     })
