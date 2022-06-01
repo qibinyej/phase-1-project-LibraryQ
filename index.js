@@ -13,7 +13,9 @@ const yearReleased = document.getElementById('year-released')
 const isbn = document.getElementById('isbn');
 const description = document.getElementById('description');
 const upvoteBtn = document.getElementById('upvote');
-const voteCount = document.getElementById('vote-count');
+const reviewForm = document.getElementById('review-form');
+const reviewBtn = document.getElementById('review');
+const feedback = document.getElementById('leaving-feedback')
 
 function displayBooks(data){
     for(let item of data){
@@ -28,25 +30,19 @@ function displayBooks(data){
     };
 };
 
-//need to look at json keys
 function showBook(bookInfo){
-    bookTitle.textContent = bookInfo.title;
-    bookAuthor.textContent = bookInfo.authors[0].name
+    bookTitle.textContent = `Title: ${bookInfo.title}`;
+    bookAuthor.textContent = `Author: ${bookInfo.authors[0].name}`
     bookCover.src = `https://covers.openlibrary.org/b/id/${bookInfo.cover_id}-L.jpg`
 }
 
 upvoteBtn.addEventListener('click', () => {
-    let total = voteCount.textContent++;
-    voteCount = total;
+    let voteCount = document.getElementById('vote-count');
+   voteCount=voteCount.textContent++;  
 })
 
-//add review on the bottom of the page
-const reviewForm = document.getElementById('review-form');
-const reviewBtn = document.getElementById('review');
 reviewForm.addEventListener('submit', event => {
     event.preventDefault();
-    reviewBtn.textContent = event.target['review'].value;
-
-    reviewForm.reset();
-    }
-)
+    let givingFeedback = feedback.textContent
+    reviewBtn.value = givingFeedback
+    })
