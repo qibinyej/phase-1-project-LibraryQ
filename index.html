@@ -16,35 +16,46 @@
     </h1>
     </header>
 
-    <div class="container mt-4">
+    <div class="search-wrapper">
+      <label for="search" class="btn btn-primary btn-sm">Search Books</label>
+      <input type="search" id="search" data-search>
+    </div>
+
+    <div class="container mt-4 text-danger">
       <nav class="book-list">
         <!-- a list of books go here --> 
       </nav>
-      
-      <section class="book details">
+       
+      <section class="book-cards">
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+          <div class="header">Title</div>
+
         <!-- All the details of the books go in these elements! -->
-      <img id="cover-image" src=""/>
-      <div>
-          <h4 id="title">Title</h4>
-          <h5 id="author">Author</h5>      
-          <h6 id="year-released">Year Released</h6>
-          <h6 id="isbn">ISBN</h6>
-          <p id="description">
-              Description
-          </p>
-          <button id="upvote" type="button" class="btn btn-outline-info">Upvote</button>
+          <img id="cover-image" src=""/>
+          <div>
+            <h4 id="title">Title</h4>
+            <h5 id="author">Author</h5>      
+            <!--
+            <h6 id="year-released">Year Released</h6>
+            <h6 id="isbn">ISBN</h6>
+            <p id="description">
+                Description
+            </p>
+            !-->
           <p>
-            <i class="fa-solid fa-lemon"></i>
-            <span id="vote-count">0</span>
+            <button id="upvote" type="button" class="btn btn-danger"><i class="fa-solid fa-lemon"></i><span id="vote-count">0</span>
+            upvote
+           </button>
           </p>
-  
-    <form id="review-form">
-      <div class="form">
-        <input id="review" type="text" placeholder="add review..."/>
-        <input type="submit" class="btn btn-primary" value="Submit"></input>
-      </div>  
-    </form>
-  </div>
+              
+          <form id="review-form">
+            <div class="form">
+              <input id="review" type="text" placeholder="add review..."/>
+              <input type="submit" class="btn btn-danger" value="submit"></input>
+            </div>  
+          </form>
+          </div>
+      </div>
     
   </body>
   
