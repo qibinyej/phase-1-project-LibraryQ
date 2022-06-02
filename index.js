@@ -1,5 +1,5 @@
 //write your code here
-fetch('https://openlibrary.org/subjects/picture_books.json?limit=12&offset=12')
+fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
 .then(response => response.json())
 .then(data => {
     displayBooks(data.works)
@@ -9,8 +9,10 @@ fetch('https://openlibrary.org/subjects/picture_books.json?limit=12&offset=12')
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const bookCover = document.getElementById('cover-image');
-const yearReleased = document.getElementById('year-released')
-const isbn = document.getElementById('isbn');
+const bookSubject = document.getElementById('subject')
+const bookKeys = document.getElementById('keys');
+//const yearReleased = document.getElementById('year-released')
+//const isbn = document.getElementById('isbn');
 const description = document.getElementById('description');
 const upvoteBtn = document.getElementById('upvote');
 const reviewForm = document.getElementById('review-form');
@@ -19,10 +21,19 @@ const feedback = document.getElementById('leaving-feedback')
 
 function displayBooks(data){
     for(let item of data){
-        const header4 = document.createElement('h4')
+        const header4 = document.createElement('a')
         header4.textContent = `${item.title}`;
         const navElement = document.querySelector('.book-list')
         navElement.appendChild(header4);
+
+        //adding attribute and append to header4
+        const headerAttribute = document.createAttribute('class')
+        const headerHref = document.createAttribute('href');
+        headerAttribute.value = "dropdown-item";
+        headerHref.value = "#"
+        header4.setAttributeNode(headerAttribute)
+        header4.setAttributeNode(headerHref);
+
         header4.addEventListener('click', () => {
             showBook(item)
         })
@@ -33,6 +44,8 @@ function showBook(bookInfo){
     bookTitle.textContent = `Title: ${bookInfo.title}`;
     bookAuthor.textContent = `Author: ${bookInfo.authors[0].name}`
     bookCover.src = `https://covers.openlibrary.org/b/id/${bookInfo.cover_id}-L.jpg`
+    bookSubject.textContent = `Subjects: ${bookInfo.subject}`
+    //bookKeys.src =
 }
 
 upvoteBtn.addEventListener('click', () => {
@@ -50,11 +63,8 @@ reviewForm.addEventListener('submit', event => {
     })
 
 // const searchInput = document.querySelector(['data-search']);
-
 // console.log(searchInput)
-
 // searchInput.addEventListener('input', e => {
 //     const value = e.target.value;
-
 
 // })

@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://kit.fontawesome.com/f22bb7326f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+  <link rel="stylesheet" href="./main.css"/>
   <script defer src="./index.js"></script>
   </head>
   <title>LibraryQ</title>
   <body>
     <header>
-    <h1 class="display-4 text-center">
+    <h1 class="display-4 text-center margin-top">
       <i class="fa-regular fa-lemon"></i>
       Library<span class="text-info">Q</span>
     </h1>
@@ -21,20 +22,26 @@
       <input type="search" id="search" data-search>     
     </div>
 
-    <div class="container mt-4">
-      <nav class="book-list">
+    <div class="container mt-4 dropdown">
+      <!--<a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">book collection</a> -->
+      <div class="dropdown-menu show collapsible" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 46px);" data-popper-placement="bottom-start">
+      <nav class="book-list dropdown">
         <!-- a list of books go here -->
       </nav>
+      </div>
+    </div>
 
-      <section class="book details">
+      <div class="book-details">
         <!-- All the details of the books go in these elements! -->
-      <img id="cover-image" src=""/>
-      <div>
+        <img id="cover-image" src=""/>
+        <div>
         <h4 id="title">Title</h4>
         <h5 id="author">Author</h5>
+        <p id="subject">Subjects</p>
+        <p id="keys"></p>
 
         <button id="upvote" type="button" class="btn btn-outline-info">Upvote
-            <h5> <!-- why header 5 -->
+            <h5> 
               <i class="fa-solid fa-lemon"></i>
               <span id="vote-count">0</span>
             </h5>
@@ -54,6 +61,7 @@
          </div>
         </form>
       </div>
+    </div>
 
   </body>
 </html>

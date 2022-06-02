@@ -1,3 +1,12 @@
 .book-list{
     text-decoration-color: green;
 }
+
+h1{
+   text-align: center;
+   margin-top: 10mm;
+}
+
+.book-details{
+    text-align: center;
+}
