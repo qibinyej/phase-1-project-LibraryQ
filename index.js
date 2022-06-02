@@ -2,9 +2,13 @@
 fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
 .then(response => response.json())
 .then(data => {
-    //displayBooks(data.works)
+    // displayBooks(data.works)
     showBook(data.works[0])
     dropDownBooks(data.works)
+   console.log(listName)
+    listName.addEventListener(('change', () => {
+        showBook(listName.value)
+ }))
 })
 
 const bookTitle = document.getElementById('title');
@@ -60,27 +64,18 @@ reviewForm.addEventListener('submit', event => {
     newReview.textContent = `“${reviewBtn.value}“`
     document.querySelector('.review-container').appendChild(newReview);
     reviewForm.reset();
-    })
+})
 
-function dropDownBooks(data){
-    for(let item of data){
-        const option = document.createElement('option')
-        option.textContent = item.title
-        const listName = document.querySelector('#list-names')
-        listName.appendChild(option)
-        option.addEventListener('click', () => {
-            showBook(data)})
+
+
+    const listName = document.querySelector('#list-names')
+
+    function dropDownBooks(bookInfo){
+        for(let bookObj of bookInfo){
+            const option = document.createElement('option')
+            option.id = "option"
+            option.textContent = bookObj.title
+            listName.appendChild(option)
+        }
     }
-}
 
-
-// const dropDown = document.querySelector(".dropdown-books-collapsible")
-// dropDown.addEventListener('click', () => {
-//         displayBooks()
-//     })
-// const searchInput = document.querySelector(['data-search']);
-// console.log(searchInput)
-// searchInput.addEventListener('input', e => {
-//     const value = e.target.value;
-
-// })
