@@ -19,12 +19,12 @@ const feedback = document.getElementById('leaving-feedback')
 
 function displayBooks(data){
     for(let item of data){
-        const header4 = document.createElement('h4')
-        header4.textContent = `${item.title}`;
+        const text = document.createElement('h5')
+        text.textContent = `${item.title}`;
         const navElement = document.querySelector('.book-list')
-        navElement.appendChild(header4);
+        navElement.appendChild(text);
 
-        header4.addEventListener('click', () => {
+        text.addEventListener('click', () => {
             showBook(item)
         })
     };
@@ -43,6 +43,9 @@ upvoteBtn.addEventListener('click', () => {
 
 reviewForm.addEventListener('submit', event => {
     event.preventDefault();
-    let givingFeedback = feedback.textContent
-    reviewBtn.value = givingFeedback
+    let newReview = document.createElement('h4')
+    newReview.textContent = `"${reviewBtn.value}"` 
+    document.querySelector('.review-container').appendChild(newReview)
+     //feedback.textContent = `"${reviewBtn.value}"` 
+     reviewForm.reset()
     })
