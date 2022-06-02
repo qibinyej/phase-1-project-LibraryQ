@@ -2,50 +2,28 @@
 fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
 .then(response => response.json())
 .then(data => {
-    //displayBooks(data.works)
     showBook(data.works[0])
     dropDownBooks(data.works)
+    console.log(listName)
+    listName.addEventListener('change', () => {
+        showBook(listName.value)})
 })
 
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const bookCover = document.getElementById('cover-image');
 const bookSubject = document.getElementById('subject')
-const bookKeys = document.getElementById('keys');
-//const yearReleased = document.getElementById('year-released')
-//const isbn = document.getElementById('isbn');
 const description = document.getElementById('description');
 const upvoteBtn = document.getElementById('upvote');
 const reviewForm = document.getElementById('review-form');
 const reviewBtn = document.getElementById('review');
-
-// function displayBooks(data){
-//     for(let item of data){
-//         const header4 = document.createElement('a')
-//         header4.textContent = `${item.title}`;
-//         const navElement = document.querySelector('.book-list')
-//         navElement.appendChild(header4);
-
-//         //adding attribute and append to header4
-//         const headerAttribute = document.createAttribute('class')
-//         const headerHref = document.createAttribute('href');
-//         headerAttribute.value = "dropdown-item";
-//         headerHref.value = "#"
-//         header4.setAttributeNode(headerAttribute)
-//         header4.setAttributeNode(headerHref);
-
-//         header4.addEventListener('click', () => {
-//             showBook(item)
-//         })
-//     }
-// };
+const listName = document.querySelector('#list-names')
 
 function showBook(bookInfo){
     bookTitle.textContent = `Title: ${bookInfo.title}`;
     bookAuthor.textContent = `Author: ${bookInfo.authors[0].name}`
     bookCover.src = `https://covers.openlibrary.org/b/id/${bookInfo.cover_id}-L.jpg`
     bookSubject.textContent = `Subjects: ${bookInfo.subject}`
-    //bookKeys.src =
 }
 
 upvoteBtn.addEventListener('click', () => {
@@ -66,21 +44,6 @@ function dropDownBooks(data){
     for(let item of data){
         const option = document.createElement('option')
         option.textContent = item.title
-        const listName = document.querySelector('#list-names')
         listName.appendChild(option)
-        option.addEventListener('click', () => {
-            showBook(data)})
     }
 }
-
-
-// const dropDown = document.querySelector(".dropdown-books-collapsible")
-// dropDown.addEventListener('click', () => {
-//         displayBooks()
-//     })
-// const searchInput = document.querySelector(['data-search']);
-// console.log(searchInput)
-// searchInput.addEventListener('input', e => {
-//     const value = e.target.value;
-
-// })
