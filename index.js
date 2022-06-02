@@ -1,5 +1,5 @@
 //write your code here
-fetch('https://openlibrary.org/subjects/picture_books.json')
+fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
 .then(response => response.json())
 .then(data => {
     displayBooks(data.works)
@@ -23,7 +23,6 @@ function displayBooks(data){
         header4.textContent = `${item.title}`;
         const navElement = document.querySelector('.book-list')
         navElement.appendChild(header4);
-
         header4.addEventListener('click', () => {
             showBook(item)
         })
@@ -43,11 +42,19 @@ upvoteBtn.addEventListener('click', () => {
 
 reviewForm.addEventListener('submit', event => {
     event.preventDefault();
-    //feedback.textContent = reviewBtn.value
-    let newReview = document.createElement('h3')
-    newReview.textContent = `"${reviewBtn.value}"`
-    document.querySelector('.review-container').appendChild(newReview);
 
+    let newReview = document.createElement('h3')
+    newReview.textContent = `“${reviewBtn.value}“`
+    document.querySelector('.review-container').appendChild(newReview);
     reviewForm.reset();
-    
     })
+
+const searchInput = document.querySelector(['data-search']);
+
+console.log(searchInput)
+
+searchInput.addEventListener('input', e => {
+    const value = e.target.value;
+
+
+})
