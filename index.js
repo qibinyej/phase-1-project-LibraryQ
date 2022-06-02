@@ -1,5 +1,5 @@
 //write your code here
-fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
+fetch('https://openlibrary.org/subjects/picture_books.json?limit=12&offset=12')
 .then(response => response.json())
 .then(data => {
     displayBooks(data.works)
@@ -48,12 +48,12 @@ reviewForm.addEventListener('submit', event => {
     reviewForm.reset();
     })
 
-const searchInput = document.querySelector(['data-search']);
+// const searchInput = document.querySelector(['data-search']);
 
-console.log(searchInput)
+// console.log(searchInput)
 
-searchInput.addEventListener('input', e => {
-    const value = e.target.value;
+// searchInput.addEventListener('input', e => {
+//     const value = e.target.value;
 
 
-})
+// })

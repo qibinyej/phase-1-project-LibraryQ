@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang=“en”>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name=“viewport” content="width=device-width, initial-scale=1">
-  <script src=“https://kit.fontawesome.com/f22bb7326f.js” crossorigin=“anonymous”></script>
-  <link rel=“stylesheet” href=https://bootswatch.com/5/sketchy/bootstrap.min.css>
-  <script defer src=“./index.js”></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/f22bb7326f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+  <script defer src="./index.js"></script>
   </head>
   <title>LibraryQ</title>
   <body>
     <header>
-    <h1 class=“display-4 text-center”>
-      <i class=“fa-regular fa-lemon”></i>
-      Library<span class=“text-info”>Q</span>
+    <h1 class="display-4 text-center">
+      <i class="fa-regular fa-lemon"></i>
+      Library<span class="text-info">Q</span>
     </h1>
     </header>
     
@@ -21,35 +21,35 @@
       <input type="search" id="search" data-search>     
     </div>
 
-    <div class=“container mt-4“>
-      <nav class=“book-list”>
+    <div class="container mt-4">
+      <nav class="book-list">
         <!-- a list of books go here -->
       </nav>
 
-      <section class=“book details”>
+      <section class="book details">
         <!-- All the details of the books go in these elements! -->
-      <img id=“cover-image” src=“”/>
+      <img id="cover-image" src=""/>
       <div>
-        <h4 id=“title”>Title</h4>
-        <h5 id=“author”>Author</h5>
+        <h4 id="title">Title</h4>
+        <h5 id="author">Author</h5>
 
-        <button id=“upvote” type=“button” class=“btn btn-outline-info”>Upvote
+        <button id="upvote" type="button" class="btn btn-outline-info">Upvote
             <h5> <!-- why header 5 -->
-              <i class=“fa-solid fa-lemon”></i>
-              <span id=“vote-count”>0</span>
+              <i class="fa-solid fa-lemon"></i>
+              <span id="vote-count">0</span>
             </h5>
         </button>
 
-        <form id=“review-form”>
-         <div class=“form”>
-          <input id=“review” type=“text” placeholder=“add review...“/>
-          <input type=“submit” class=“btn btn-primary” value=“Submit”></input>
+        <form id="review-form">
+         <div class="form">
+          <input id="review" type="text" placeholder="add review..."/>
+          <input type="submit" class="btn btn-primary" value="Submit"></input>
          </div>
 
-         <div class=“review-container”>
+         <div class="review-container">
           <h3>
             Reviews:
-            <p id=“leaving-feedback”></p>
+            <p id="leaving-feedback"></p>
           </h3>
          </div>
         </form>
