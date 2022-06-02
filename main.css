@@ -1,1 +1,22 @@
+html {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+html, body {
+    margin: 0;
+    padding: 0;
+  }
 
+.container-4 {
+    display: flex;
+}
+
+.book-details {
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    gap: 40px;
+}
+nav {
+    width: 25%;
+}
