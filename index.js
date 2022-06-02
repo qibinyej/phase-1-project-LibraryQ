@@ -19,6 +19,7 @@ const upvoteBtn = document.getElementById('upvote');
 const reviewForm = document.getElementById('review-form');
 const reviewBtn = document.getElementById('review');
 
+<<<<<<< HEAD
 // function displayBooks(data){
 //     for(let item of data){
 //         const header4 = document.createElement('a')
@@ -39,6 +40,28 @@ const reviewBtn = document.getElementById('review');
 //         })
 //     }
 // };
+=======
+function displayBooks(data){
+    for(let item of data){
+        const header4 = document.createElement('a')
+        header4.textContent = `${item.title}`;
+        const navElement = document.querySelector('.book-list')
+        navElement.appendChild(header4);
+
+        //adding attribute and append to header4
+        const headerAttribute = document.createAttribute('class')
+        const headerHref = document.createAttribute('href');
+        headerAttribute.value = "dropdown-item";
+        headerHref.value = "#"
+        header4.setAttributeNode(headerAttribute)
+        header4.setAttributeNode(headerHref);
+
+        header4.addEventListener('click', () => {
+            showBook(item)
+        })
+    };
+};
+>>>>>>> c32dfbb00e25c1bc629df4a69e92617d710ff062
 
 function showBook(bookInfo){
     bookTitle.textContent = `Title: ${bookInfo.title}`;
@@ -62,6 +85,7 @@ reviewForm.addEventListener('submit', event => {
     reviewForm.reset();
     })
 
+<<<<<<< HEAD
 function dropDownBooks(data){
     for(let item of data){
         const option = document.createElement('option')
@@ -78,6 +102,8 @@ function dropDownBooks(data){
 // dropDown.addEventListener('click', () => {
 //         displayBooks()
 //     })
+=======
+>>>>>>> c32dfbb00e25c1bc629df4a69e92617d710ff062
 // const searchInput = document.querySelector(['data-search']);
 // console.log(searchInput)
 // searchInput.addEventListener('input', e => {

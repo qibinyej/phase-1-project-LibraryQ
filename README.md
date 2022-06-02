@@ -1,3 +1,11 @@
 # phase-1-project-LibraryQ
-The website displays a list of books with book images and details. You click on each book to view their details. 
-On the bottom of each book page, there are a upvote button and a form box to submit reviews. 
+
+LibraryQ has a collection of children's picture books. 
+
+As the page first loads, it displays the first book with its cover image, title, and author.
+
+You can click on each book to view their information. 
+
+On the bottom of the webpage, there are an upvote button and a review box where patrons can submit reviews.
+
+Happy Reading! 
