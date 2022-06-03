@@ -10,3 +10,9 @@ h1{
 .book-details{
     text-align: center;
 }
+div{
+    position: relative;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate(0px, 46px);
+}

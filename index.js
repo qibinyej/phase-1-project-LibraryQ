@@ -1,12 +1,21 @@
 //write your code here
+let pictureBooks; 
+
 fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
 .then(response => response.json())
 .then(data => {
+    pictureBooks = data.works
     showBook(data.works[0])
     dropDownBooks(data.works)
     console.log(listName)
     listName.addEventListener('change', () => {
-        showBook(listName.value)})
+        const foundBooks = pictureBooks.find(book => {
+            console.log(listName.value)
+             return book.title === listName.value
+        }) 
+        console.log(foundBooks)
+        showBook(foundBooks)
+    })
 })
 
 const bookTitle = document.getElementById('title');
