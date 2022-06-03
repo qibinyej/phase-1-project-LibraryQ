@@ -7,15 +7,16 @@ fetch('https://openlibrary.org/subjects/picture_books.json?limit=100')
     pictureBooks = data.works
     showBook(data.works[0])
     dropDownBooks(data.works)
-    console.log(listName)
+    //console.log(listName)
     listName.addEventListener('change', () => {
         const foundBooks = pictureBooks.find(book => {
-            console.log(listName.value)
+            //console.log(listName.value)
              return book.title === listName.value
         }) 
-        console.log(foundBooks)
+        //console.log(foundBooks)
         showBook(foundBooks)
     })
+    
 })
 
 const bookTitle = document.getElementById('title');
@@ -25,6 +26,7 @@ const bookSubject = document.getElementById('subject')
 const description = document.getElementById('description');
 const upvoteBtn = document.getElementById('upvote');
 const reviewForm = document.getElementById('review-form');
+const reviewContainer = document.querySelector('.review-container')
 const reviewBtn = document.getElementById('review');
 const listName = document.querySelector('#list-names')
 
@@ -42,10 +44,9 @@ upvoteBtn.addEventListener('click', () => {
 
 reviewForm.addEventListener('submit', event => {
     event.preventDefault();
-
     let newReview = document.createElement('h3')
     newReview.textContent = `“${reviewBtn.value}“`
-    document.querySelector('.review-container').appendChild(newReview);
+    reviewContainer.appendChild(newReview);
     reviewForm.reset();
     })
 
