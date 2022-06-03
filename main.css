@@ -16,3 +16,9 @@ div{
     margin: 0px;
     transform: translate(0px, 46px);
 }
+body {
+    background-image: url("https://wallpapercave.com/wp/wp7632541.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
